@@ -1,0 +1,34 @@
+@use './_variables.scss' as *;
+
+@mixin orderbook-row($color, $background-color, $bar-color) {
+    text-align: right;
+
+    &>div {
+        padding: 0 10px;
+    }
+
+    &:hover {
+        background-color: $hover;
+    }
+
+    &.line-highlight,
+    &>.price-highlight {
+        background-color: $background-color;
+    }
+
+    &>.price {
+        color: $color;
+    }
+
+    &>.total {
+        position: relative;
+
+        .bar-fill {
+            position: absolute;
+            top: 0;
+            right: 0;
+            height: 100%;
+            background: $bar-color;
+        }
+    }
+}
